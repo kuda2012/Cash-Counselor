@@ -1,0 +1,49 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.pagination a {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid#2C3E50;
+  color: #2c3e50;
+}
+
+.pagination__link {
+  font-weight: bold;
+}
+
+.pagination__link--active a {
+  color: #fff;
+  background-color: #18bc9c;
+}
+
+.pagination__link--disabled a {
+  color: rgb(198, 197, 202);
+  border: 1px solid rgb(198, 197, 202);
+}
+.Transactions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  width: 55%;
+}
+.Account {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.Transactions-changeCharts {
+  align-self: start;
+}
+.Transactions-title {
+  margin-top: 30px;
+}
+.category {
+  margin-left: 10px;
+}

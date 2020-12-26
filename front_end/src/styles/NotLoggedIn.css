@@ -1,0 +1,10 @@
+.NotLoggedIn {
+  margin-top: 10px;
+}
+.NotLoggedIn-subtitle {
+  margin: 30px 0px;
+}
+.NotLoggedIn-details {
+  list-style-position: inside;
+  margin: 5px 0px;
+}

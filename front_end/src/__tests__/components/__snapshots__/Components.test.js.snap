@@ -1,0 +1,923 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Account /> render() renders the Account component 1`] = `
+<DocumentFragment>
+  <div
+    class="Account"
+  >
+    <h4
+      class="Account-title"
+    >
+      Transactions for Account ...
+    </h4>
+    <button
+      class="btn btn-secondary Account-filter-button"
+      type="button"
+    >
+      Filter Transactions
+    </button>
+    <div
+      class="Transactions"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<AccountTrends /> render() renders the AccountTrends component 1`] = `
+<DocumentFragment>
+  <div
+    class="AccountTrends"
+  >
+    <h4
+      class="AccountTrends-title"
+    >
+      Transactions for Multiple Accounts
+    </h4>
+    <button
+      class="btn btn-secondary AccountTrends-filter-button"
+      type="button"
+    >
+      Close Filters
+    </button>
+    <div>
+      ...loading
+    </div>
+    <div
+      style="height: auto; opacity: 1; overflow: visible;"
+    >
+      <div
+        class="sc-gsTCUz epgQsa"
+      />
+    </div>
+    <div
+      class="Transactions"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<DeleteUser /> render() renders the Delete User component 1`] = `
+<DocumentFragment>
+  <div
+    class="Delete-user"
+  >
+    <div
+      style="margin-top: 15px;"
+    >
+      We regret that you would like to delete your account. Please enter your password below in order to do so.
+    </div>
+    <form>
+      <div
+        class="Delete-user-items form-group"
+      >
+        <label
+          for="password"
+        >
+          <b>
+            Password
+          </b>
+        </label>
+        <div
+          class="Input-password"
+        >
+          <input
+            autocomplete="new-password"
+            class="form-control"
+            id="password"
+            name="password"
+            required=""
+            type="password"
+            value=""
+          />
+        </div>
+      </div>
+      <button
+        class="btn btn-danger"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<EditPassword /> render() renders the Edit Password component 1`] = `
+<DocumentFragment>
+  <div
+    class="Edit-user"
+  >
+    <h3
+      style="margin-top: 15px;"
+    >
+      Edit Username
+    </h3>
+    <form>
+      <div
+        class="Edit-user-items form-group"
+      >
+        <label
+          for="password"
+        >
+          <b>
+            Current Password
+          </b>
+        </label>
+        <div
+          class="Input-password"
+        >
+          <input
+            autocomplete="new-password"
+            class="form-control"
+            id="password"
+            name="password"
+            required=""
+            type="password"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="Edit-user-items form-group"
+      >
+        <label
+          for="new_password"
+        >
+          <b>
+            New Password
+          </b>
+        </label>
+        <div
+          class="Input-password"
+        >
+          <input
+            class="form-control"
+            id="new_password"
+            name="new_password"
+            required=""
+            type="password"
+            value=""
+          />
+          <button
+            class="password-button btn btn-primary"
+            type="button"
+          >
+            Show Password
+          </button>
+        </div>
+      </div>
+      <div
+        class="Edit-user-items form-group"
+      >
+        <label
+          for="new_password_copy"
+        >
+          <b>
+            Re-type New Password
+          </b>
+        </label>
+        <div
+          class="Input-password"
+        >
+          <input
+            class="form-control"
+            id="new_password_copy"
+            name="new_password_copy"
+            required=""
+            type="password"
+            value=""
+          />
+          <button
+            class="password-button btn btn-primary"
+            type="button"
+          >
+            Show Password
+          </button>
+        </div>
+      </div>
+      <button
+        class="Login-submit btn btn-primary"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<EditUsername /> render() renders the Edit Username component 1`] = `
+<DocumentFragment>
+  <div
+    class="Edit-user"
+  >
+    <h3
+      style="margin-top: 15px;"
+    >
+      Edit Username
+    </h3>
+    <form>
+      <div
+        class="Edit-user-items form-group"
+      >
+        <label
+          for="username"
+        >
+          <b>
+            New Username
+          </b>
+        </label>
+        <input
+          class="form-control"
+          id="new_username"
+          name="new_username"
+          required=""
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="Edit-user-items form-group"
+      >
+        <label
+          for="password"
+        >
+          <b>
+            Password
+          </b>
+        </label>
+        <div
+          class="Input-password"
+        >
+          <input
+            autocomplete="new-password"
+            class="form-control"
+            id="password"
+            name="password"
+            required=""
+            type="password"
+            value=""
+          />
+        </div>
+      </div>
+      <button
+        class="Login-submit btn btn-primary"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<FilterAllTransactions /> render() renders the Filter All Transactions component 1`] = `
+<DocumentFragment>
+  <form
+    class="FilterAllTransactionsForm"
+  >
+    <div
+      class="FilterAllTransactions"
+    >
+      <div
+        class="FilterAllTransactions-top"
+      >
+        <div
+          id="FilterAllTransactions-top-left"
+        >
+          <label
+            for="accountMask"
+          >
+            Select Time Period:
+          </label>
+          <div
+            class=" css-2b097c-container"
+          >
+            <div
+              class="select__control css-yk16xz-control"
+            >
+              <div
+                class="select__value-container css-g1d714-ValueContainer"
+              >
+                <div
+                  class="select__placeholder css-1wa3eu0-placeholder"
+                >
+                  Select...
+                </div>
+                <div
+                  class="css-b8ldur-Input"
+                >
+                  <div
+                    class="select__input"
+                    style="display: inline-block;"
+                  >
+                    <input
+                      aria-autocomplete="list"
+                      autocapitalize="none"
+                      autocomplete="off"
+                      autocorrect="off"
+                      id="react-select-3-input"
+                      spellcheck="false"
+                      style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
+                      tabindex="0"
+                      type="text"
+                      value=""
+                    />
+                    <div
+                      style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="select__indicators css-1hb7zxy-IndicatorsContainer"
+              >
+                <span
+                  class="select__indicator-separator css-1okebmr-indicatorSeparator"
+                />
+                <div
+                  aria-hidden="true"
+                  class="select__indicator select__dropdown-indicator css-tlfecz-indicatorContainer"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="css-6q0nyr-Svg"
+                    focusable="false"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                  >
+                    <path
+                      d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <input
+              name="time_period"
+              type="hidden"
+              value=""
+            />
+          </div>
+          <input
+            autocomplete="off"
+            required=""
+            style="opacity: 0; height: 0px;"
+            tabindex="-1"
+            value=""
+          />
+        </div>
+        <div
+          id="FilterAllTransactions-top-right"
+        >
+          <label
+            for="accountMask"
+            id="accountMask-label"
+          >
+            Select an Account: (Default selects all accounts)
+          </label>
+          <div
+            class="basic-multi-select css-2b097c-container"
+          >
+            <div
+              class="select__control css-yk16xz-control"
+            >
+              <div
+                class="select__value-container select__value-container--is-multi css-g1d714-ValueContainer"
+              >
+                <div
+                  class="select__placeholder css-1wa3eu0-placeholder"
+                >
+                  Select...
+                </div>
+                <div
+                  class="css-b8ldur-Input"
+                >
+                  <div
+                    class="select__input"
+                    style="display: inline-block;"
+                  >
+                    <input
+                      aria-autocomplete="list"
+                      autocapitalize="none"
+                      autocomplete="off"
+                      autocorrect="off"
+                      id="react-select-4-input"
+                      spellcheck="false"
+                      style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
+                      tabindex="0"
+                      type="text"
+                      value=""
+                    />
+                    <div
+                      style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="select__indicators css-1hb7zxy-IndicatorsContainer"
+              >
+                <span
+                  class="select__indicator-separator css-1okebmr-indicatorSeparator"
+                />
+                <div
+                  aria-hidden="true"
+                  class="select__indicator select__dropdown-indicator css-tlfecz-indicatorContainer"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="css-6q0nyr-Svg"
+                    focusable="false"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                  >
+                    <path
+                      d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div>
+              <input
+                name="account_ids"
+                type="hidden"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="FilterAllTransactions-bottom"
+      >
+        <div
+          class="FilterAllTransactions-bottom-label-input"
+        >
+          <label
+            for="amount_floor"
+          >
+            Lowest Amount: 
+          </label>
+          <input
+            class="form-control"
+            id="amount_floor"
+            name="amount_floor"
+            step=".01"
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="FilterAllTransactions-bottom-label-input"
+        >
+          <label
+            for="amount_ceiling"
+          >
+            Highest Amount: 
+          </label>
+          <input
+            class="form-control"
+            id="amount_ceiling"
+            name="amount_ceiling"
+            step=".01"
+            type="number"
+            value=""
+          />
+        </div>
+      </div>
+      <div>
+        <button
+          class="FilterAllTransactions-submit btn btn-primary"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`<FilterTransactions /> render() renders the Filter Transactions component 1`] = `
+<DocumentFragment>
+  <form
+    class="FilterTransactionsForm"
+  >
+    <div
+      class="FilterTransactions"
+    >
+      <div
+        class="FilterTransactions-top"
+      >
+        <div>
+          <label
+            for="name"
+          >
+            Transaction Name:
+          </label>
+          <input
+            class="form-control"
+            id="name"
+            name="name"
+            type="text"
+            value=""
+          />
+        </div>
+        <div>
+          <label
+            for="start_date"
+          >
+            Between Dates (Begin): 
+          </label>
+          <input
+            class="form-control"
+            id="start_date"
+            name="start_date"
+            type="date"
+            value=""
+          />
+        </div>
+        <div>
+          <label
+            for="end_date"
+          >
+            Between Dates (End): 
+          </label>
+          <input
+            class="form-control"
+            id="end_date"
+            name="end_date"
+            type="date"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="FilterTransactions-bottom"
+      >
+        <div>
+          <label
+            class="FilterTransactions-bottom-labels"
+            for="categories"
+          >
+            Categories
+          </label>
+          <div
+            class=" css-2b097c-container"
+            id="categories"
+          >
+            <div
+              class="select__control css-yk16xz-control"
+            >
+              <div
+                class="select__value-container select__value-container--is-multi css-g1d714-ValueContainer"
+              >
+                <div
+                  class="select__placeholder css-1wa3eu0-placeholder"
+                >
+                  Select...
+                </div>
+                <div
+                  class="css-b8ldur-Input"
+                >
+                  <div
+                    class="select__input"
+                    style="display: inline-block;"
+                  >
+                    <input
+                      aria-autocomplete="list"
+                      autocapitalize="none"
+                      autocomplete="off"
+                      autocorrect="off"
+                      id="react-select-2-input"
+                      spellcheck="false"
+                      style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
+                      tabindex="0"
+                      type="text"
+                      value=""
+                    />
+                    <div
+                      style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="select__indicators css-1hb7zxy-IndicatorsContainer"
+              >
+                <span
+                  class="select__indicator-separator css-1okebmr-indicatorSeparator"
+                />
+                <div
+                  aria-hidden="true"
+                  class="select__indicator select__dropdown-indicator css-tlfecz-indicatorContainer"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="css-6q0nyr-Svg"
+                    focusable="false"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                  >
+                    <path
+                      d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div>
+              <input
+                name="categories"
+                type="hidden"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <label
+            class="FilterTransactions-bottom-labels"
+            for="amount_floor"
+          >
+            Lowest Amount:
+          </label>
+          <input
+            class="form-control"
+            id="amount_floor"
+            name="amount_floor"
+            step=".01"
+            type="number"
+            value=""
+          />
+        </div>
+        <div>
+          <label
+            class="FilterTransactions-bottom-labels"
+            for="amount_ceiling"
+          >
+            Highest Amount: 
+          </label>
+          <input
+            class="form-control"
+            id="amount_ceiling"
+            name="amount_ceiling"
+            step=".01"
+            type="number"
+            value=""
+          />
+        </div>
+      </div>
+      <div>
+        <button
+          class="FilterTransactions-submit btn btn-primary"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`<IdleModal /> render() renders the IdleModal component 1`] = `<DocumentFragment />`;
+
+exports[`<LinkLoggedIn /> render() renders the LinkLoggedIn component 1`] = `
+<DocumentFragment>
+  <div
+    class="Account-Summaries"
+  >
+    <h1
+      class="display-4"
+    >
+      Accounts
+    </h1>
+    <h6>
+      ...loading
+    </h6>
+    <div
+      class="Account-Summaries-box"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Login /> render() renders the login component 1`] = `
+<DocumentFragment>
+  <div
+    class="Login"
+  >
+    <div>
+      <button
+        class="btn btn-primary active"
+      >
+        Login
+      </button>
+      <button
+        class="btn btn-secondary "
+      >
+        Signup
+      </button>
+    </div>
+    <div
+      class="card"
+    >
+      <h4
+        id="title"
+      >
+        Login
+      </h4>
+      <div
+        class="card-body"
+      >
+        <form
+          class="Login-form"
+        >
+          <div
+            class="Login-form-items form-group"
+          >
+            <label
+              for="username"
+            >
+              <b>
+                Username
+              </b>
+            </label>
+            <input
+              class="form-control"
+              id="username"
+              name="username"
+              required=""
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            class="Login-form-items form-group"
+          >
+            <label
+              for="password"
+            >
+              <b>
+                Password
+              </b>
+            </label>
+            <input
+              class="form-control"
+              id="password"
+              name="password"
+              required=""
+              type="password"
+              value=""
+            />
+          </div>
+          <button
+            class="Login-submit btn btn-primary"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Navbar /> render() renders the Navbar component 1`] = `
+<DocumentFragment>
+  <div>
+    <nav
+      class="bg-primary navbar navbar-expand-md"
+    >
+      <a
+        aria-current="page"
+        class="navbar-brand active"
+        href="/"
+      >
+        Cash Counselor
+      </a>
+    </nav>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Signup /> render() renders the Signup component 1`] = `
+<DocumentFragment>
+  <div
+    class="card"
+  >
+    <h4
+      id="title"
+    >
+      Signup
+    </h4>
+    <div
+      class="card-body"
+    >
+      <form>
+        <div
+          class="Signup-form-items form-group"
+        >
+          <label
+            for="username"
+          >
+            <b>
+              Username
+            </b>
+          </label>
+          <input
+            class="form-control"
+            id="username"
+            name="username"
+            required=""
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="Signup-form-items form-group"
+        >
+          <label
+            for="first_name"
+          >
+            <b>
+              First Name
+            </b>
+          </label>
+          <input
+            class="form-control"
+            id="first_name"
+            name="first_name"
+            required=""
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="Signup-form-items form-group"
+        >
+          <label
+            for="password"
+          >
+            <b>
+              Password
+            </b>
+          </label>
+          <div
+            class="Input-password"
+          >
+            <input
+              autocomplete="new-password"
+              class="form-control Signup-password"
+              id="password"
+              name="password"
+              required=""
+              type="password"
+              value=""
+            />
+            <button
+              class="password-button btn btn-primary"
+              type="button"
+            >
+              Show Password
+            </button>
+          </div>
+        </div>
+        <div
+          class="Signup-form-items form-group"
+        >
+          <label
+            for="password_copy"
+          >
+            <b>
+              Re-type Password
+            </b>
+          </label>
+          <div
+            class="Input-password"
+          >
+            <input
+              class="form-control  Signup-password"
+              id="password_copy"
+              name="password_copy"
+              required=""
+              type="password"
+              value=""
+            />
+            <button
+              class="password-button btn btn-primary"
+              type="button"
+            >
+              Show Password
+            </button>
+          </div>
+        </div>
+        <button
+          class="Login-submit btn btn-primary"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;

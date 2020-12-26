@@ -1,0 +1,57 @@
+.FilterAllTransactionsForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.FilterAllTransactions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+}
+.FilterAllTransactions-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+}
+
+#FilterAllTransactions-top-left {
+  margin-right: 38px;
+  margin-top: 22px;
+}
+
+#FilterAllTransactions-top-right {
+  position: relative;
+  margin-left: 17px;
+}
+.select__control {
+  width: 200px;
+}
+.basic-multi-select {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.FilterAllTransactions-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+}
+.FilterAllTransactions-bottom-label-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.FilterAllTransactions-submit {
+  margin: 25px;
+}
+.select__menu {
+  color: black !important;
+}
+.select__placeholder {
+  color: black !important;
+}
