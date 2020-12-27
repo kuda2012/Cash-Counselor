@@ -140,7 +140,10 @@ export function editUsername(formData, token) {
         token,
       });
       alert(data.msg);
-      dispatch(loginDone(data.token));
+      if (data.msg.split(" ")[0] === "Username") {
+        dispatch(loginDone(data.token));
+        window.location = "/";
+      }
     } catch (error) {
       alert(error.response.data.message);
     }
@@ -154,6 +157,7 @@ export function editPassword(formData, token) {
         token,
       });
       alert(data.msg);
+      window.location = "/";
     } catch (error) {
       alert(error.response.data.message);
     }
