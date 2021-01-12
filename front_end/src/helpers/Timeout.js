@@ -45,6 +45,7 @@ const Timeout = ({ triggerModal, setTriggerModal }) => {
   };
 
   const refreshToken = useCallback(() => {
+    clearTimeout(timerId.current);
     axios
       .post(`${BASE_URL}refreshPlaidToken`, { _token })
       .then((res) => {
@@ -85,7 +86,6 @@ const Timeout = ({ triggerModal, setTriggerModal }) => {
       }, 1000);
     }
     return () => {
-      clearTimeout(timerId.current);
       clearInterval(timerId1.current);
     };
   }, [_token, logged_in, checkIdle, triggerModal, refreshToken]);
