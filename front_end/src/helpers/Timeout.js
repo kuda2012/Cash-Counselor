@@ -98,6 +98,7 @@ const Timeout = ({ triggerModal, setTriggerModal }) => {
         });
       }, 1000);
     }
+    console.log(modalCountUp);
     if (modalCountUp === 450) {
       setCheckIdle(false);
       setTriggerModal(true);
