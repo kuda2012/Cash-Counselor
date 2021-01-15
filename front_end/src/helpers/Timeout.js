@@ -32,12 +32,14 @@ const Timeout = ({ triggerModal, setTriggerModal }) => {
       Array.from(document.getElementsByClassName("fade show")).forEach((item) =>
         item.classList.remove("show")
       );
-      timerId2.current = setTimeout(() => {
-        alert("Thanks for using Cash Counselor. See you soon!");
-      }, 500);
-      timerId3.current = setTimeout(() => {
-        window.location.href = "/";
-      }, 2000);
+      window.location.href = "/";
+      // timerId2.current = setTimeout(() => {
+      //   alert("Thanks for using Cash Counselor. See you soon!");
+      // }, 500);
+
+      // timerId3.current = setTimeout(() => {
+
+      // }, 2000);
       return () => {
         clearTimeout(timerId2.current);
       };
