@@ -45,20 +45,21 @@ const Timeout = ({ triggerModal, setTriggerModal }) => {
   };
 
   const refreshToken = useCallback(() => {
-    clearTimeout(timerId.current);
     axios
       .post(`${BASE_URL}refreshPlaidToken`, { _token })
       .then((res) => {
         console.log("refreshing");
+        clearTimeout(timerId.current);
+        timerId.current = null;
         dispatch({ type: "SET_JWT", _token: res.data._token });
         setModalCountUp(0);
+        setCheckIdle(true);
         localStorage.removeItem("_token");
         localStorage.setItem("_token", res.data._token);
       })
       .catch((err) => {
         reset();
       });
-    setCheckIdle(true);
   }, [_token, dispatch, reset]);
 
   useEffect(() => {
@@ -69,9 +70,10 @@ const Timeout = ({ triggerModal, setTriggerModal }) => {
       !triggerModal &&
       modalCountUp < 420
     ) {
-      timerId.current = setTimeout(() => {
-        refreshToken();
-      }, 30000);
+      if (!timerId.current)
+        timerId.current = setTimeout(() => {
+          refreshToken();
+        }, 10000);
     }
     if (
       logged_in &&
@@ -86,6 +88,7 @@ const Timeout = ({ triggerModal, setTriggerModal }) => {
       }, 1000);
     }
     return () => {
+      if (!timerId.current) clearTimeout(timerId.current);
       clearInterval(timerId1.current);
     };
   }, [_token, logged_in, checkIdle, triggerModal, refreshToken]);
@@ -116,11 +119,13 @@ const Timeout = ({ triggerModal, setTriggerModal }) => {
       setCheckIdle(false);
     }
   });
+
   window.addEventListener("mousemove", () => {
     if (logged_in && checkIdle) {
       setCheckIdle(false);
     }
   });
+
   window.addEventListener("click", () => {
     if (logged_in && checkIdle) {
       setCheckIdle(false);
