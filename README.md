@@ -4,6 +4,8 @@
 
 Cash Counselor is your one-stop-shop for learning about your spending habits.
 
+[Here's](https://www.youtube.com/watch?v=wlVCz2S5Y6Q) a video of a quick walk through of the project.
+
 The site is deployed [here](https://cash-counselor.herokuapp.com/).
 
 No worries. You will use a dummy bank account to try out the app, not your real one. No need to worry about exposing your sensitive banking data.
