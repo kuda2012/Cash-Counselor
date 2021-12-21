@@ -7,7 +7,6 @@ import { getTransactions } from "../helpers/actionCreators";
 import "../styles/FilterTransactionsForm.css";
 
 const FilterTransactionsForm = ({ setCurrentPage, test }) => {
-  // const { account_id } = test || useParams();
   const { account_id } = useParams();
   const _token = useSelector((state) => state._token);
   const access_token = useSelector((state) => state.access_token);

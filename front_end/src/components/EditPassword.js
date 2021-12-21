@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 import { Button } from "reactstrap";
 import { editPassword, getAccounts } from "../helpers/actionCreators";
 import "../styles/EditUsername.css";

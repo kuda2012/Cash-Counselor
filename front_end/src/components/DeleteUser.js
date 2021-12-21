@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 import { Button } from "reactstrap";
 import { deleteProfile, getAccounts } from "../helpers/actionCreators";
 import "../styles/DeleteUser.css";
-// import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const DeleteUser = () => {
   const dispatch = useDispatch();
   dispatch({
@@ -52,12 +49,6 @@ const DeleteUser = () => {
   });
   return (
     <div className="Delete-user">
-      {/* <Button
-        onClick={() => history.push("/profile")}
-        className="Delete-user-cancel"
-      >
-        <FontAwesomeIcon color="primary" icon={faArrowLeft} />
-      </Button> */}
       <div style={{ marginTop: "15px" }}>
         We regret that you would like to delete your account. Please enter your
         password below in order to do so.

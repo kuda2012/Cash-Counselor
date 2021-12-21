@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { useHistory } from "react-router-dom";
 import { Button, Input } from "reactstrap";
 import Select from "react-select";
 import { setTrends } from "../helpers/actionCreators";

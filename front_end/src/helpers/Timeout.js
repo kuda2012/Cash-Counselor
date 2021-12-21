@@ -3,12 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import IdleModal from "../components/IdleModal";
 import axios from "axios";
 import { BASE_URL } from "../config";
-import { deleteTransactions } from "./actionCreators";
 const Timeout = ({ triggerModal, setTriggerModal }) => {
   const timerId = useRef(null);
   const timerId1 = useRef(null);
   const timerId2 = useRef(null);
-  const timerId3 = useRef(null);
   const dispatch = useDispatch();
   const access_token = useSelector((state) => state.access_token);
   const logged_in = useSelector((state) => state.logged_in);
@@ -23,7 +21,6 @@ const Timeout = ({ triggerModal, setTriggerModal }) => {
         access_token,
         item_id,
       });
-      // dispatch(deleteTransactions(_token, access_token, item_id));
       dispatch({
         type: "HALF-RESET",
       });
@@ -33,13 +30,6 @@ const Timeout = ({ triggerModal, setTriggerModal }) => {
         item.classList.remove("show")
       );
       window.location.href = "/";
-      // timerId2.current = setTimeout(() => {
-      //   alert("Thanks for using Cash Counselor. See you soon!");
-      // }, 500);
-
-      // timerId3.current = setTimeout(() => {
-
-      // }, 2000);
       return () => {
         clearTimeout(timerId2.current);
       };
@@ -103,7 +93,6 @@ const Timeout = ({ triggerModal, setTriggerModal }) => {
         });
       }, 1000);
     }
-    console.log(modalCountUp);
     if (modalCountUp === 450) {
       setCheckIdle(false);
       setTriggerModal(true);

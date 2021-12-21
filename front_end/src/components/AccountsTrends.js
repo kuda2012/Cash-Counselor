@@ -23,11 +23,8 @@ import PieChart, {
   Label,
   Connector,
   Size,
-  SmallValuesGrouping,
   Legend as Leg,
-  Export,
 } from "devextreme-react/pie-chart";
-import { Pie } from "react-chartjs-2";
 import { Table } from "reactstrap";
 const Inner = styled.div`
   &:before,
@@ -112,16 +109,16 @@ const AccountsTrends = () => {
   const [showCharts, setShowCharts] = useState(false);
   const [activeBar, setActiveBar] = useState("active");
   const [activePie, setActivePie] = useState("");
-  const COLORS = [
-    "#3a3f44",
-    "#375a7f",
-    "#aaaaaa",
-    "#FFBB28",
-    "#FF8042",
-    "#0088FE",
-    "#00C49F",
-    "#AF19FF",
-  ];
+  // const COLORS = [
+  //   "#3a3f44",
+  //   "#375a7f",
+  //   "#aaaaaa",
+  //   "#FFBB28",
+  //   "#FF8042",
+  //   "#0088FE",
+  //   "#00C49F",
+  //   "#AF19FF",
+  // ];
 
   useEffect(() => {
     if (
@@ -150,9 +147,7 @@ const AccountsTrends = () => {
 
   const [isVisible, setIsVisible] = useState(true);
   let crossedOver = false;
-  // console.log(trendTransactions.categories);
   function formatLabel(arg) {
-    console.log(Number(arg.valueText).toFixed(2));
     return `${arg.argumentText}: $${arg.valueText}`;
   }
   return (
@@ -317,28 +312,6 @@ const AccountsTrends = () => {
                       </BarChart>
                     )}
                     {!showBar && (
-                      // <Pie
-                      //   width={400}
-                      //   height={400}
-                      //   data={{
-                      //     datasets: [
-                      //       {
-                      //         data: trendTransactions.categories.categories.map(
-                      //           (category) => category.value
-                      //         ),
-                      //         backgroundColor: COLORS,
-                      //       },
-                      //     ],
-                      //     labels: trendTransactions.categories.categories.map(
-                      //       (category) => category.name
-                      //     ),
-                      //   }}
-                      //   options={{
-                      //     legend: {
-                      //       position: "bottom",
-                      //     },
-                      //   }}
-                      // />
                       <PieChart
                         id="pie"
                         dataSource={trendTransactions.categories.categories.map(
@@ -359,10 +332,6 @@ const AccountsTrends = () => {
                           >
                             <Connector visible={true} width={1} />
                           </Label>
-                          {/* <SmallValuesGrouping
-                            threshold={30}
-                            mode="smallValueThreshold"
-                          /> */}
                         </Series>
                         <Leg
                           horizontalAlignment="center"
