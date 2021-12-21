@@ -79,14 +79,6 @@ const EditUsername = () => {
               onChange={handleChange}
               value={formData.password}
             />
-            {/* <Button
-              type="button"
-              color="primary"
-              className="password-button"
-              onClick={() => toggleShowPassword1()}
-            >
-              {showPassword1 ? "Hide Password" : "Show Password"}
-            </Button> */}
           </div>
         </div>
         <div className="Edit-user-items form-group">

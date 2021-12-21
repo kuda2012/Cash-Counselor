@@ -73,8 +73,6 @@ export function setTrends(_token, access_token, formData) {
         access_token,
         ...formData,
       });
-      // console.log(data);
-      // console.log(JSON.stringify(data.labels.months));
       dispatch(trendTransactionsReceived(data));
     } catch (error) {
       console.log(error);

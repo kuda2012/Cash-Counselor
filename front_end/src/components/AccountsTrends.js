@@ -1,8 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
-import { bool, node } from "prop-types";
-import { useTransition, animated } from "react-spring";
-import styled from "styled-components";
-import FilterAllTransactionsForm from "./FilterAllTransactionsForm";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAccounts } from "../helpers/actionCreators";
 import { v4 as uuid } from "uuid";
@@ -26,75 +22,8 @@ import PieChart, {
   Legend as Leg,
 } from "devextreme-react/pie-chart";
 import { Table } from "reactstrap";
-const Inner = styled.div`
-  &:before,
-  &:after {
-    content: "";
-    display: table;
-  }
-`;
-
-const visibleStyle = { height: "auto", opacity: 1, overflow: "visible" };
-const hiddenStyle = { opacity: 0, height: 0, overflow: "hidden" };
-
-function getElementHeight(ref) {
-  return ref.current ? ref.current.getBoundingClientRect().height : 0;
-}
-
-/** The children of this component will slide down on mount and will slide up on unmount */
-const SlideToggleContent = ({ isVisible, children, forceSlideIn }) => {
-  const isVisibleOnMount = useRef(isVisible && !forceSlideIn);
-  const containerRef = useRef(null);
-  const innerRef = useRef(null);
-
-  const transitions = useTransition(isVisible, null, {
-    enter: () => async (next, cancel) => {
-      const height = getElementHeight(innerRef);
-
-      cancel();
-
-      await next({ height, opacity: 1, overflow: "hidden" });
-      await next(visibleStyle);
-    },
-    leave: () => async (next, cancel) => {
-      const height = getElementHeight(containerRef);
-
-      cancel();
-
-      await next({ height, overflow: "hidden" });
-      await next(hiddenStyle);
-
-      isVisibleOnMount.current = false;
-    },
-    from: isVisibleOnMount.current ? visibleStyle : hiddenStyle,
-    unique: true,
-  });
-
-  return transitions.map(({ item: show, props: springProps, key }) => {
-    if (show) {
-      return (
-        <animated.div ref={containerRef} key={key} style={springProps}>
-          <Inner ref={innerRef}>{children}</Inner>
-        </animated.div>
-      );
-    }
-
-    return null;
-  });
-};
-
-SlideToggleContent.defaultProps = {
-  forceSlideIn: false,
-};
-
-SlideToggleContent.propTypes = {
-  /** Should the component mount it's childeren and slide down */
-  isVisible: bool.isRequired,
-  /** Makes sure the component always slides in on mount. Otherwise it will be immediately visible if isVisible is true on mount */
-  forceSlideIn: bool,
-  /** The slidable content elements */
-  children: node.isRequired,
-};
+import AccountTrendsFilterer from "./AccountTrendsFilterer";
+import { graphTitles } from "../helpers/graphTitles.js";
 
 const AccountsTrends = () => {
   const dispatch = useDispatch();
@@ -109,16 +38,6 @@ const AccountsTrends = () => {
   const [showCharts, setShowCharts] = useState(false);
   const [activeBar, setActiveBar] = useState("active");
   const [activePie, setActivePie] = useState("");
-  // const COLORS = [
-  //   "#3a3f44",
-  //   "#375a7f",
-  //   "#aaaaaa",
-  //   "#FFBB28",
-  //   "#FF8042",
-  //   "#0088FE",
-  //   "#00C49F",
-  //   "#AF19FF",
-  // ];
 
   useEffect(() => {
     if (
@@ -136,49 +55,17 @@ const AccountsTrends = () => {
     type: "SET_CURRENT_LOCATION",
     currentLocation: window.location.pathname,
   });
-  const accountMasks = accounts
-    ? accounts.map((account, i) => {
-        return {
-          value: `${accounts[i].account_id}`,
-          label: `${accounts[i].name}  ...${account.mask}`,
-        };
-      })
-    : undefined;
 
-  const [isVisible, setIsVisible] = useState(true);
   let crossedOver = false;
   function formatLabel(arg) {
     return `${arg.argumentText}: $${arg.valueText}`;
   }
   return (
     <div className="AccountTrends">
-      <h2 className="AccountTrends-title">
-        Transactions for Multiple Accounts
-      </h2>
-      <ul style={{ listStylePosition: "inside" }}>
-        <li>Positive amounts indicate money spent</li>
-        <li>Negative amounts indicate money deposited into your account(s)</li>
-        <li>Note: Pie Chart does not include deposited amounts</li>
-      </ul>
-      <button
-        type="button"
-        className="btn btn-secondary AccountTrends-filter-button"
-        onClick={() => setIsVisible(!isVisible)}
-      >
-        {isVisible
-          ? "Close Filters"
-          : "Want to see trends for your transactions?"}
-      </button>
-      {!accounts && <div>...loading</div>}
-      <SlideToggleContent isVisible={isVisible}>
-        <>
-          {accountMasks && (
-            <>
-              <FilterAllTransactionsForm setShowCharts={setShowCharts} />
-            </>
-          )}
-        </>
-      </SlideToggleContent>
+      <AccountTrendsFilterer
+        accounts={accounts}
+        setShowCharts={setShowCharts}
+      />
       <div className="Transactions">
         {trendTransactions && showCharts && (
           <>
@@ -218,69 +105,8 @@ const AccountsTrends = () => {
                   </button>
                 </div>
                 <h3 className="Transactions-title">
-                  {/* Date Periods for Date by Date*/}
-                  {/* Datas in same month*/}
-                  {showBar &&
-                    trendTransactions.labels.dates &&
-                    trendTransactions.labels.monthYear[0][0] ===
-                      trendTransactions.labels.monthYear[1][0] &&
-                    `${trendTransactions.labels.monthYear[0][0]} ${trendTransactions.labels.monthYear[0][1]}`}
-                  {/* Dates in different months */}
-                  {showBar &&
-                    trendTransactions.labels.dates &&
-                    trendTransactions.labels.monthYear[0][1] !==
-                      trendTransactions.labels.monthYear[1][1] &&
-                    `${trendTransactions.labels.monthYear[0][0]} ${trendTransactions.labels.monthYear[0][1]} - ${trendTransactions.labels.monthYear[1][0]} ${trendTransactions.labels.monthYear[1][1]} `}
-                  {/* One Month */}
-                  {showBar &&
-                    trendTransactions.labels.dates &&
-                    trendTransactions.labels.monthYear[0][1] ===
-                      trendTransactions.labels.monthYear[1][1] &&
-                    trendTransactions.labels.monthYear[0][0] !==
-                      trendTransactions.labels.monthYear[1][0] &&
-                    `${trendTransactions.labels.monthYear[0][0]} - ${trendTransactions.labels.monthYear[1][0]} ${trendTransactions.labels.monthYear[0][1]}`}
-                  {/* Month Periods */}
-                  {/* Month to given month except for Jan-dec */}
-                  {(showBar || !showBar) &&
-                    trendTransactions.labels.months &&
-                    trendTransactions.labels.monthYear[0][1] ===
-                      trendTransactions.labels.monthYear[1][1] &&
-                    trendTransactions.labels.monthYear[0][0].concat(
-                      trendTransactions.labels.monthYear[1][0]
-                    ) !== "JanDec" &&
-                    `${trendTransactions.labels.monthYear[0][0]} - ${trendTransactions.labels.monthYear[1][0]} ${trendTransactions.labels.monthYear[0][1]}`}
-                  {/* Full Year */}
-                  {(showBar || !showBar) &&
-                    trendTransactions.labels.months &&
-                    trendTransactions.labels.monthYear[0][1] ===
-                      trendTransactions.labels.monthYear[1][1] &&
-                    trendTransactions.labels.monthYear[0][0] === "Jan" &&
-                    `${trendTransactions.labels.monthYear[0][1]}`}
-                  {/* Month to given month if they have different years */}
-                  {(showBar || !showBar) &&
-                    trendTransactions.labels.months &&
-                    trendTransactions.labels.monthYear[0][1] !==
-                      trendTransactions.labels.monthYear[1][1] &&
-                    `${trendTransactions.labels.monthYear[0][0]} ${trendTransactions.labels.monthYear[0][1]} - ${trendTransactions.labels.monthYear[1][0]} ${trendTransactions.labels.monthYear[1][1]}`}
-                  {/* Date Periods for Categories*/}
-                  {/* Last 7 or last 15 days */}
-                  {!showBar &&
-                    trendTransactions.labels.dates &&
-                    trendTransactions.labels.dates.length < 15 &&
-                    `${trendTransactions.labels.monthYear[0][0]} ${
-                      trendTransactions.labels.dates[0].name
-                    } - ${trendTransactions.labels.monthYear[1][0]} ${
-                      trendTransactions.labels.dates[
-                        trendTransactions.labels.dates.length - 1
-                      ].name
-                    } `}
-                  {/* Full Month */}
-                  {!showBar &&
-                    trendTransactions.labels.dates &&
-                    trendTransactions.labels.dates.length > 15 &&
-                    `${trendTransactions.labels.monthYear[0][0]} ${trendTransactions.labels.monthYear[0][1]}  `}
+                  {graphTitles(showBar, trendTransactions)}
                 </h3>
-
                 <div className="Graph-Table">
                   <div>
                     {showBar && (
