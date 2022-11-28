@@ -1,5 +1,5 @@
-import 'devextreme/dist/css/dx.common.css';
-import 'devextreme/dist/css/dx.light.css';
+import "devextreme/dist/css/dx.common.css";
+import "devextreme/dist/css/dx.light.css";
 import React, { useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
@@ -22,10 +22,10 @@ function App() {
             currentLocation={currentLocation}
           />
           <Router />
-          <Timeout
+          {/* <Timeout
             triggerModal={triggerModal}
             setTriggerModal={setTriggerModal}
-          />
+          /> */}
         </>
       }
     </div>

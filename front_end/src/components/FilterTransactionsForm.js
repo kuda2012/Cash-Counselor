@@ -57,14 +57,6 @@ const FilterTransactionsForm = ({ setCurrentPage, test }) => {
   };
   const reset = () => {
     window.location.href = `/${account_id}`;
-    // setShowReset(false);
-    // dispatch(getTransactions(_token, access_token, account_id));
-    // setFormData(INITIAL_STATE);
-    // let paginationButtons = document.querySelectorAll(".pagination a");
-    // paginationButtons[1].addEventListener("click", (event) => {
-    //   setCurrentPage(0);
-    // });
-    // paginationButtons[1].click();
   };
 
   return (

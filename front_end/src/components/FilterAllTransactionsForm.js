@@ -75,8 +75,6 @@ const FilterTransactionsForm = ({ setShowCharts }) => {
   };
   const reset = () => {
     window.location.href = "/accounts/trends";
-    // setShowReset(false);
-    // setFormData(INITIAL_STATE);
   };
   return (
     <form onSubmit={handleSubmit} className="FilterAllTransactionsForm">

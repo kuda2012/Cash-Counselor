@@ -82,7 +82,7 @@ export function setTrends(_token, access_token, formData) {
 export function deleteTransactions(_token, access_token, item_id) {
   return async function (dispatch) {
     try {
-      let { data } = await axios.post(`${BASE_URL}api/transactions/delete`, {
+      await axios.post(`${BASE_URL}api/transactions/delete`, {
         _token,
         access_token,
         item_id,
