@@ -1,6 +1,0 @@
-[submodule "cash-counselor"]
-	path = cash-counselor
-	url = https://git.heroku.com/cash-counselor.git
-[submodule "backend-cash-counselor"]
-	path = backend-cash-counselor
-	url = https://git.heroku.com/backend-cash-counselor.git
