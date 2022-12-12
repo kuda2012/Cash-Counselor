@@ -1,2 +1,12 @@
-/backend
-/frontend
+/back_end
+/front_end
+/backend/.gitignore
+/backend/node_modules
+/backend/.env
+/backend/.git
+/backend/Procfile
+/frontend/.gitignore
+/frontend/node_modules
+/frontend/build
+/frontend/.env
+/frontend/.git
